@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Coping clipboard in JavaScript</title>
+</head>
+
+<body>
+	
+	<p class="selection">This is a paragraph...</p>
+
+	<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" alt="">
+
+	<script>
+
+		window.onload = function() {
+			document.addEventListener('mouseup', function mouseUpHandler() {
+				var txt = getSelectionText();
+
+				if (txt.length > 0) {
+					console.log(txt);
+				}
+			});
+
+			function getSelectionText() {
+				var selectedText = '';
+
+				if (window.getSelection) {
+					selectedText = window.getSelection().toString();
+				}
+
+				return selectedText;
+			}
+		}
+
+	</script>
+</body>
+</html>
