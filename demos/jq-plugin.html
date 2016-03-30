@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery plugins</title>
+</head>
+
+<body>
+
+	<script src="./../node_modules/jquery/dist/jquery.js"></script>
+	<script>
+		
+		$(document).ready(function() {
+
+			(function($) {
+				$.fn.highlight = function (options) {
+
+					var opts = $.extend({}, $.fn.highlight.defaults, options);
+					// 调用私有方法
+					debug(this);
+
+					return this.each(function() {
+						var $this = $(this);
+
+						var markup = $this.html();
+
+						markup = $.fn.highlight.format(markup);
+
+						$this.html(markup);
+					});
+				};
+
+				$.fn.highlight.format = function (txt) {
+					return '<strong>' + txt + '</strong>';
+				};
+
+				$.fn.highlight.defaults = {
+					foreground: 'red',
+					background: 'yellow'
+				};
+
+				function debug($obj) {
+					if (window.console && window.console.log) {
+						window.console.log('highlight selection count: ' + $obj.size());
+					}
+				}
+
+			}(jQuery));
+
+		});
+	</script>
+</body>
+</html>
