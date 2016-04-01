@@ -6,4 +6,4 @@ JS 面向对象
 * [Javascript面向对象理解](http://cnodejs.org/topic/5235c9d3101e57452155901d)
 * [JavaScript继承详解](http://www.cnblogs.com/sanshi/archive/2009/07/08/1519036.html)
 * [详解Javascript的继承实现](http://web.jobbole.com/85460/)
-* 
+* [javascript-the-core](http://dmitrysoshnikov.com/ecmascript/javascript-the-core/)

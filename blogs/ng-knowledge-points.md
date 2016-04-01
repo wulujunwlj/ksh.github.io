@@ -6,11 +6,16 @@ ng 的知识点总结
 * compile,controller,link 分别代表什么？有什么作用
 * transclude 使用方法
 * priority 的作用方式？
+* [Creating Custom Directives](https://docs.angularjs.org/guide/directive)
+* [angularjs directive 实例 详解](http://blog.51yip.com/jsjquery/1607.html)
 * 
 
 ## service
 * 定义 service 有几种方式？有何区别？各种方式的使用方法有何异同？
 * service 的作用是什么？
+* [AngularJS: Factory vs Service vs Provider](http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/)
+* [Angular.js Services](http://www.cnblogs.com/whitewolf/p/angular-services.html)
+* 
 
 ## filter
 * [如何在angularjs的自定义指令内部定义自定义过滤器？](https://www.zhihu.com/question/41912122)
@@ -39,4 +44,4 @@ ng 的知识点总结
 * filter 中遇到的异步问题
 > $stateful = true;
 
-* 
+* 定义指令时，绑定的属性以 `data-` 开头时获取不到对应属性名的问题

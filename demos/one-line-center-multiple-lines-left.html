@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字一行居中，多行左对齐</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-weight: normal;
+		font-style: normal;
+	}
+	body {
+		font-size: 20px;
+		line-height: 1;
+	}
+
+	ul {
+		margin: 20px;
+	}
+
+	.method-1 ul {
+		display: block;
+		width: 800px;
+		margin: 100px auto;
+		overflow: hidden;
+	}
+	.method-1 li {
+		float: left;
+		width: 300px;
+		background: #aaaaaa;
+		height: 50px;
+		margin-right: 10px;
+		text-align: center;
+		padding: 10px;
+	}
+	.method-1 p {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.method-2 ul {
+		width: 800px;
+		margin: 100px;
+		overflow: hidden;
+	}
+	.method-2 li {
+		float: left;
+		width: 300px;
+		background: #aaa;
+		height: 50px;
+		margin-right: 10px;
+		padding: 10px;
+	}
+	.method-2 p {
+		display: table;
+		margin: 0 auto;
+	}
+
+	.divide {
+		height: 20px;
+		background: #fafafa;
+	}
+	</style>
+</head>
+
+<body>
+	<a href="http://blog.csdn.net/fungleo/article/details/49797311"> 纯CSS实现文字一行居中，多行左对齐的方法</a>
+
+	<div>
+		<ul class="method-1">
+			<li><p>一行文字</p></li>
+			<li><p>多行文字多行文字多行文字多行文字多行文字多行文字多行文字</p></li>
+		</ul>
+	</div>
+
+	<div>
+		<ul class="method-2">
+			<li><p>一行文字</p></li>
+			<li><p>多行文字多行文字多行文字多行文字多行文字多行文字多行文字</p></li>
+		</ul>
+	</div>
+</body>
+</html>
