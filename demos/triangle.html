@@ -6,34 +6,69 @@
 		<style>
 		.triangle {
 			width:0;
-		height:0;
-		border-style:solid;
-		border-color:transparent #333 transparent transparent;/*透明 灰 透明 透明 */
-		position:relative;
+			height:0;
+			border: 20px solid;
 		}
-				.triangle-left {
-		border-width:10px 10px 10px 0;
+		.triangle-left {
+			border-color: transparent #000 transparent transparent;
 		}
 		.triangle-up {
-			border-width: 0 10px 10px 10px;
+			border-color: transparent transparent #000 transparent;
 		}
 		.triangle-right {
-		border-width:10px 0px 10px 10px;
+			border-color: transparent transparent transparent #000;
 		}
 		.triangle-down {
-		border-width:10px 10px 0px 10px;
+			border-color: #000 transparent transparent transparent;
+		}
+
+		.triangle-border-up {
+			width: 0;
+			height: 0;
+			border-width: 0 30px 30px;
+			border-style: solid;
+			border-color: transparent transparent #333;
+			position: relative;
+		}
+
+		.caret {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			margin-left: 2px;
+			vertical-align: middle;
+			border-top: 4px solid;
+			border-right: 4px solid transparent;
+			border-left: 4px solid transparent;
+		}
+
+		.border {
+			width: 50px;
+			height: 50px;
+			border: 20px solid;
+			border-color: #F83C3C #1814D8 #1DBF27 #F7E81D;
 		}
 		</style>
 	</head>
 	<body>
+		<div class="border"></div>
+
 		<div class="triangle triangle-left"></div>
 		<div class="triangle triangle-up"></div>
 		<div class="triangle triangle-right"></div>
 		<div class="triangle triangle-down"></div>
 
+		<div class="triangle-border-up"></div>
+
+		<div class="caret"></div>
+
 		<div>
-		<a href="http://www.cnblogs.com/blosaa/p/3823695.html">纯CSS写三角形-border法</a></div>
+			<a href="http://www.cnblogs.com/blosaa/p/3823695.html">纯CSS写三角形-border法</a>
+		</div>
 		<p><a href="http://www.tuicool.com/articles/3eaINn">终于搞懂了CSS实现三角形图标的原理</a></p>
 		<p><a href="http://www.jb51.net/css/41448.html">纯CSS画的基本图形（矩形、圆形、三角形、多边形、爱心、八卦等）</a></p>
+		<p>
+			<a href="http://blog.csdn.net/pigsuper/article/details/43053679">CSS绘制三角形的原理剖析</a>
+		</p>
 	</body>
 </html>

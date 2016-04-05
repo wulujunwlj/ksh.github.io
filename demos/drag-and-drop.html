@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽效果</title>
+	<style>
+	body {
+		background: url(images/baidu_demo.png) no-repeat top center #fff;
+		padding: 0px;
+		margin: 0px;
+		font-size: 12px;
+		font-family: '微软雅黑';
+	}
+	.ui-dialog {
+		width: 380px;
+		height: auto;
+		position: absolute;
+		z-index: 9000;
+		top: 100px;
+		left: 100px;
+		border: 1px solid #d5d5d5;
+		background: #fff;
+	}
+
+	.ui-dialog a {
+		text-decoration: none;
+	}
+
+	.ui-dialog-title {
+		height: 48px;
+		line-height: 48px;
+		padding: 0 20px; 
+		color: #535353;
+		font-size: 16px;
+		background: #f5f5f5;
+		border-bottom: 1px solid #efefef;
+		cursor: move;
+		user-select: none;
+	}
+
+	.ui-dialog-closebutton {
+		width: 16px;
+		height: 16px;
+		display: block;
+		position: absolute;
+		top: 12px;
+		right: 20px;
+		background: url(images/close_def.png);
+		color: #fff;
+	}
+
+	.ui-dialog-closebutton:hover {
+		background: url(images/close_hov.png);
+	}
+
+	.ui-dialog-conent {
+		padding: 15px 20px;
+	}
+
+	.ui-dialog-pt15 {
+		padding-top: 15px;
+	}
+
+	.ui-dialog-l40 {
+		height: 40px;
+		line-height: 40px;
+		text-align: right;
+	}
+
+	.ui-dialog-input {
+		width: 100%;
+		height: 40px;
+		margin: 0;
+		padding: 0;
+		border: 1px solid #d5d5d5;
+		font-size: 16px;
+		color: #c1c1c1;
+		text-indent: 25px;
+		outline: none;
+	}
+
+	.ui-dialog-input-username {
+		background: url(images/input_username.png) no-repeat 2px;
+	}
+
+	.ui-dialog-input-password {
+		background: url(images/input_password.png) no-repeat 2px;
+	}
+
+	.ui-dialog-submit {
+		width: 100%;
+		height: 50px;
+		display: block;
+		font-size: 16px;
+		color: #fff;
+		background: #3b7ae3;
+		text-align: center;
+		line-height: 50px;
+	}
+
+	.ui-dialog-submit:hover {
+		background: #3f81b0;
+	}
+
+	.ui-mask {
+		width: 100%;
+		height: 100%;
+		background: #000;
+		opacity: 0.4;
+		filter: Alpha(opacity=40);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 8000;
+		display: none;
+	}
+
+	.link {
+		text-align: left;
+		line-height: 20px;
+		padding-right: 40px;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="ui-dialog" id="dialog">
+		<div class="ui-dialog-title" id="dialogTitle">
+			<a href="javascript:;" class="ui-dialog-closebutton"></a>
+		</div>
+
+		<div class="ui-dialog-content">
+			<div class="ui-dialog-l40 ui-dialog-pt-15">
+				<input type="text" class="ui-dialog-input ui-dialog-input-username" placeholder="手机/邮箱/用户名">
+			</div>
+
+			<div class="ui-dialog-l40 ui-dialog-pt15">
+				<input type="password" class="ui-dialog-input ui-dialog-input-password" placeholder="密码">
+			</div>
+
+			<div class="ui-dialog-l40">
+				<a href="#">忘记密码</a>
+			</div>
+
+			<div>
+				<a href="#" class="ui-dialog-submit">登录</a>
+			</div>
+
+			<div class="ui-dialog-l40">
+				<a href="#">立即注册</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui-mask" id="mask" onselect="return false;"></div>
+	<div class="link">
+		<a href="javascript:;"></a>
+	</div>
+
+	<script>
+		// 获取元素对象
+		function g(id) {
+			return document.getElementById(id);
+		}
+
+		// 自动居中 - 登录浮层
+		function autoCenter(el) {
+			var bodyW = document.documentElement.clientWidth;
+			var bodyH = document.documentElement.clientHeight;
+
+			var elW = el.offsetWidth;
+			var elH = el.offsetHeight;
+
+			el.style.left = (bodyW - elW) /  2 + 'px';
+			el.style.top = (bodyH - elH) /  2 + 'px';
+		}
+
+		// 自动全屏 - 遮罩
+		function fillToBody(el) {
+			el.style.width = document.documentElement.clientWidth + 'px';
+			el.style.height = document.documentElement.clientHeight + 'px';
+		}
+
+		var mouseOffsetX = 0;
+		var mouseOffsetY = 0;
+		var isDraging = false;	// 是否可拖拽的标记
+
+		// 事件1：鼠标在标题栏上按下时，要计算鼠标相对拖拽元素的左上角的坐标，并且标记元素为可拖动
+		g('dialogTitle').addEventListener('mousedown', function(evt) {
+			var e = e || window.event;
+
+			mouseOffsetX = e.pageX - g('dialog').offsetLeft;
+			mouseOffsetY = e.pageY - g('dialog').offsetTop;
+
+			isDraging = true;
+		});
+		
+		// 事件2：鼠标开始移动，要检测登录浮层是否已经为移动，如果是，则更新元素的位置到当前鼠标的位置(注意减去第一步获得的偏移)
+
+		// 事件3：鼠标松开的时候，标记元素为不可拖动状态
+	</script>
+</body>
+</html>

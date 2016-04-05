@@ -1,4 +1,7 @@
 {
-	"name": "blog",
-	"version": "0.1.0",
+  "name": "blog",
+  "version": "0.1.0",
+  "dependencies": {
+    "cheerio": "^0.20.0"
+  }
 }
