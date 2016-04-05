@@ -21,7 +21,7 @@ someModule.factory('greeter', ['$window', function(renamed$window) {}]);
 ```
 * 使用 DI
     - 控制器中(控制器负责应用操作逻辑的 JS 类)
-    - 工厂方法中(工厂方法负责创建 Angular 中的绝大多数对象。工厂方法时注册在模块下的)
+    - 工厂方法中(工厂方法负责创建 Angular 中的绝大多数对象。工厂方法是注册在模块下的)
 ```
 someModule.controller('MyController', ['$scope', 'dep', function($scope, dep) {
     $scope.method = function() {}

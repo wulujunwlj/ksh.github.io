@@ -24,6 +24,7 @@ ng 的知识点总结
 
 ## inner directive
 * ng-model 的执行过程？单向绑定是什么原理？为什么要引入单项绑定？
+* ng-bind/ng-bind-html/ng-bind-template
 * 
 
 ## others

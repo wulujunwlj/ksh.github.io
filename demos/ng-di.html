@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="mainCtrl as vm">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Dependency Injection</title>
+	<script src="./..//node_modules/angular/angular.js"></script>
+</head>
+
+<body>
+	<script>
+		(function(angular) {
+			angular
+				.module('app', [])
+				.provider('providerService', [ 
+					function() {
+						this.$get = ['$http', function($http) {
+							return {};
+						}];
+					}
+				])
+				.config(['providerService', function(providerService) {
+					//
+				}])
+				.factory('factoryService', ['$http', 
+					function($http) {
+						//
+					}
+				])
+				.directive('direct', ['$http', 
+					function($http) {
+						var directObj = {
+							restrict: 'AE',
+							compile: function() {
+								return this.link;
+							},
+							controller: ['factoryService', 
+								function(factoryService) {
+									var vm = this;
+								}
+							],
+							link: function($scope, $elem, $attrs) {
+								//
+							}
+						};
+
+						return dirctObj;
+					}
+				])
+				.filter('filterName', ['$http', 
+					function($http) {
+						function filterFn(input) {
+							return input.substring(0, 1).toUpperCase() + input.substring(1);
+						}
+
+						return filterFn;
+					}
+				])
+		}(angular));
+	</script>
+</body>
+</html>

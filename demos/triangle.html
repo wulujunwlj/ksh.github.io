@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>trangle in CSS</title>
+		<style>
+		.triangle {
+			width:0;
+		height:0;
+		border-style:solid;
+		border-color:transparent #333 transparent transparent;/*透明 灰 透明 透明 */
+		position:relative;
+		}
+				.triangle-left {
+		border-width:10px 10px 10px 0;
+		}
+		.triangle-up {
+			border-width: 0 10px 10px 10px;
+		}
+		.triangle-right {
+		border-width:10px 0px 10px 10px;
+		}
+		.triangle-down {
+		border-width:10px 10px 0px 10px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="triangle triangle-left"></div>
+		<div class="triangle triangle-up"></div>
+		<div class="triangle triangle-right"></div>
+		<div class="triangle triangle-down"></div>
+
+		<div>
+		<a href="http://www.cnblogs.com/blosaa/p/3823695.html">纯CSS写三角形-border法</a></div>
+		<p><a href="http://www.tuicool.com/articles/3eaINn">终于搞懂了CSS实现三角形图标的原理</a></p>
+		<p><a href="http://www.jb51.net/css/41448.html">纯CSS画的基本图形（矩形、圆形、三角形、多边形、爱心、八卦等）</a></p>
+	</body>
+</html>
