@@ -1,0 +1,14 @@
+/**
+ * styles for css-icons
+ */
+.triangle {
+	width: 0;
+	height: 0;
+	// border-width: 20px;
+	// border-style: solid;
+	border: 20px solid;
+	// border-color: #000;
+}
+.triangle-up {
+	border-color: transparent transparent #000 transparent;
+}
