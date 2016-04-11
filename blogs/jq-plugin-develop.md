@@ -34,4 +34,4 @@ $.myPlugin.bar('test');
 * 参考 [cycle 插件](https://github.com/malsup/cycle) 的处理
 * [jquery-metadata](https://github.com/jquery-archive/jquery-metadata)
 * [jquery-dotdotdot](https://github.com/FrDH/jQuery.dotdotdot)
-* 
+* [跟我一起学JQuery插件开发教程](http://www.poluoluo.com/jzxy/201204/163035.html)

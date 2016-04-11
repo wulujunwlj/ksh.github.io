@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Touch Event</title>
+
+	<style>
+	.wrapper {
+		width: 600px;
+		height: 400px;
+		background: #ccc;
+		margin-top: 20px;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper" id="wrapper"></div>
+
+	<div class="wrapper" id="wrapper2"></div>
+
+	<script>
+		var $wrapper1 = document.querySelector('#wrapper');
+		var $wrapper2 = document.querySelector('#wrapper2');
+		var startTime;
+
+		var log = function(msg) {
+			console.log(new Date().getTime() - startTime);
+			console.log(msg);
+		};
+
+		var mouseDown = function() {
+			startTime = new Date().getTime();
+			log('mouseDown');
+		}
+		var mouseClick = function() {
+			log('mouseClick');
+		};
+		var mouseUp = function() {
+			log('mouseUp');
+		};
+		var touchStart = function() {
+			startTime = new Date().getTime();
+			log('touchStart');
+		};
+		var touchEnd = function() {
+			log('touchEnd');
+		};
+
+		$wrapper1.addEventListener('mousedown', mouseDown);
+		$wrapper1.addEventListener('click', mouseClick);
+		$wrapper1.addEventListener('mouseup', mouseUp);
+		$wrapper1.addEventListener('touchstart', touchStart);
+		$wrapper1.addEventListener('touchend', touchEnd);
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chrome Timeline</title>
+	<style>
+	div {
+		font-size: 26px;
+		font-weight: bold;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="div1">Hello World1</div>
+	<div id="div2">Hello World2</div>
+	<div id="div3">Hello World3</div>
+	<div id="div4">Hello World4</div>
+	<div id="div5">Hello World5</div>
+	<div id="div6">Hello World6</div>
+	<div id="div7">Hello World7</div>
+
+	<button id="btn">click me</button>
+
+	<script>
+		var k = 0;
+		function x() {
+			if (k >= 7) return;
+
+			document.getElementById('div' + (++k)).innerHTML = 'hello world';
+		}
+
+		document.getElementById('btn').addEventListener('click', x);
+	</script>
+</body>
+</html>

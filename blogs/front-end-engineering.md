@@ -6,4 +6,8 @@
 * [grunt](http://www.gruntjs.net/)
 * [遍历所有子目录，动态创建grunt transport任务](http://kyfxbl.iteye.com/blog/1971335)
 * [grunt实用总结](http://www.cnblogs.com/chyingp/p/grunt-practical-summary.html)
-* 
+* [大公司里怎样开发和部署前端代码？](https://www.zhihu.com/question/20790576)
+* [张云龙 blog](https://github.com/fouber/blog)
+* [less](http://123.56.156.13/api/lesscss/bootcss/www.bootcss.com/p/lesscss/index.htm)
+* [高性能WEB开发应用指南](http://developer.51cto.com/art/201104/257581.htm)
+* [chrome-develop-tools](http://www.cnblogs.com/constantince/p/4585983.html)
