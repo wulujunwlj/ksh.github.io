@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 Animation</title>
+	<style>
+	.container {
+		width: 200px;
+		height: 100px;
+		background: #F00;
+	}
+	.container1 {		
+		animation: first 5s;
+		-webkit-animation: first 5s;
+	}
+	.container2 {
+		animation: second 5s;
+		-webkit-animation: second 5s;
+	}
+	@keyframes first {
+		from {
+			background: #F00;
+		}
+		to {
+			background: #00F;
+		}
+	}
+	@-webkit-keyframes first {
+		from {
+			background: #F00;
+		}
+		to {
+			background: #00F;
+		}
+	}
+
+	@keyframes second {
+		0% {
+			background: #F00;
+		}
+		25% {
+			background: #FF0;
+		}
+		50% {
+			background: #0F0;
+		}
+		75% {
+			background: #0FF;
+		}
+		100% {
+			background: #00F;
+		}
+	}
+	@-webkit-keyframes second {
+		0% {
+			background: #F00;
+		}
+		25% {
+			background: #FF0;
+		}
+		50% {
+			background: #0F0;
+		}
+		75% {
+			background: #0FF;
+		}
+		100% {
+			background: #00F;
+		}
+	}
+	</style>
+</head>
+
+<body>
+	<div class="container container1"></div>
+	<div class="container container2"></div>
+</body>
+</html>
