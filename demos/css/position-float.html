@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Position && Float</title>
+	<style>
+	.reference {
+		margin: 0 auto;
+		max-width: 800px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.wrapper {
+		width: 600px;
+		background: #ccc;
+		margin: 0 auto;
+	}
+	.container {
+		width: 100px;
+		height: 30px;
+		margin: 10px 0;
+	}
+	.container1 {
+		background: #f00;
+	}
+	.container2 {
+		background: #0f0;
+		/*position: relative;*/
+		top: 20px;
+		left: 20px;
+	}
+	.container3 {
+		background: #00f;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="reference">
+		<a href="http://www.codeceo.com/article/css-position-float.html">CSS中Position、Float属性深入探讨</a>
+	</div>
+
+	<div class="wrapper">
+		<div class="container container1">A</div>
+		<div class="container container2">B1</div>
+		<div class="container container2">B2</div>
+		<div class="container container3">C</div>
+
+		<span class="container container1">A</span>
+		<span class="container container2">B1</span>
+		<span class="container container2">B2</span>
+		<span class="container container3">C</span>
+	</div>
+
+</body>
+</html>
