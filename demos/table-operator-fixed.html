@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Table Operator Fixed</title>
+	<style>
+	.container {
+		width: 600px;
+		overflow: auto;
+		margin: 0 auto;
+	}
+	.operators {
+		margin: 10px 0;
+		background: #ccc;
+		padding: 5px;
+	}
+	.btn {
+		min-width: 30px;
+		padding: 5px 8px;
+		border-radius: 4px;
+	}
+	.table.table-bordered {
+		border: 1px solid #CAD9EA;
+		border-collapse: collapse;
+		color: #666;
+	}
+	.table.table-bordered th,
+	.table.table-bordered td {
+		border: 1px solid #CAD9EA;
+		min-width: 30px;
+		text-align: center;
+		height: 30px;
+		padding: 0 1em;
+		white-space: nowrap;
+	}
+	.table.table-bordered td {
+		background: #FAF5FE;
+	}
+	p {
+		height: 70px;
+		margin: 10px 0;
+		background: #666;
+	}
+	</style>
+</head>
+
+<body>
+	<p>11</p>
+	<p>11</p>
+	<p>11</p>
+	<p>11</p>
+	<p>11</p>
+	<p>11</p>
+	<div class="container">
+		<div class="operators" id="operators">
+			<button class="btn btn-primary">测试1</button>
+			<button class="btn btn-success">测试2</button>
+		</div>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>邮箱</th>
+					<th>年龄</th>
+					<th>邮箱</th>
+					<th>年龄</th>
+					<th>邮箱</th>
+					<th>年龄</th>
+					<th>邮箱</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+					<td>1</td>
+					<td>aaa</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<p>222</p>
+	<p>222</p>
+	<p>222</p>
+	<p>222</p>
+	<p>222</p>
+	<p>222</p>
+
+	<script src="./../node_modules/jquery/dist/jquery.js"></script>
+	<script src="./nav-fixed.js"></script>
+
+	<script>
+		// document.addEventListener('DOMContentLoaded', function readyFn() {
+		// 	var $operators = document.querySelector('#operators');
+
+		// 	document.addEventListener('scroll', function scrollFn(evt) {
+		// 		$operators = document.querySelector('#operators');
+		// 		console.log(document.body.offsetHeight);
+		// 		console.log($operators.offsetTop);
+		// 		console.log($operators.offsetParent);
+		// 	});
+		// });
+
+		(function() {
+			$(document).ready(function() {
+				$('#operators').navFixed();
+				// var $operators = $('#operators');
+
+
+				// var topPos = $(document).scrollTop();
+				// var operatorsPos = $operators.prev().outerHeight(true);
+
+				// $(document.scroll(function() {
+				// 	topPos = $(document).scrollTop();
+
+				// 	if (topPos >= operatorsPos) {
+				// 		$operators.css('position', 'fixed');
+				// 	}
+				// })
+			});
+		}());
+	</script>
+</body>
+</html>
