@@ -12,6 +12,12 @@
 
 ## others
 * [利用 JavaScript 数据绑定实现一个简单的 MVVM 库](https://segmentfault.com/a/1190000004847657)
+* [AngularJS动态加载Controller](http://www.tuicool.com/articles/vYRJZj)
+* [ngTouch](https://docs.angularjs.org/api/ngTouch)
+* [移动端WEB开发，click,touch,tap事件浅析](http://www.xuebuyuan.com/2174858.html)
+* [AngularJS Module类的方法](http://www.thinksaas.cn/group/topic/264575/)
+* [深入理解JavaScript系列（32）：设计模式之观察者模式](http://www.cnblogs.com/TomXu/archive/2012/03/02/2355128.html)
+* [W3Help](http://w3help.org/zh-cn/home/compatibility.html)
 
 ## 项目文件结构
 ├── ksh.github.io

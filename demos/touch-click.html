@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="mainCtrl as vm">
+<head>
+	<meta charset="UTF-8">
+	<title>Touch Click</title>
+	<style>
+	.items-list {
+		list-style: none;
+		font-size: 20px;
+	}
+	.item {
+		padding: 5px;
+	}
+	</style>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<ul ng-repeat="item in vm.items track by $index" class="items-list">
+			<li ng-click="vm.click($event)" class="item">
+				<a ng-bind="item.name"></a>
+			</li>
+		</ul>
+	</div>
+
+	<script src="./../node_modules/angular/angular.js"></script>
+	<script>
+		(function(angular) {
+			angular
+				.module('app', [])
+				.controller('mainCtrl', ['$scope', function($scope) {
+					var vm = this;
+					vm.items = [
+						{
+							'name': '123',
+							'age': 2
+						}, {
+							'name': 'aaa',
+							'age': 8
+						}
+					];
+
+					vm.click = function(evt) {
+						evt.preventDefault();
+
+						console.log(evt);
+					}
+				}])
+		}(angular));
+	</script>
+</body>
+</html>
