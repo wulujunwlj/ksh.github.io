@@ -89,13 +89,104 @@ JavaScript 面向对象编程指南
 * 能重写自己的函数
     - 可以用来执行某些一次性的初始化工作
 
-### 闭包
+### 3.5 闭包
 * 作用域链
 * 词法作用域
     - JS 中，每个函数都有一个自己的词法作用域。也就是说，每个函数在**被定义时**(而非执行时)都会创建一个属于自己的环境(作用域)
-* P82
+* 利用闭包突破作用域链
+```
+// 闭包实现方式1：返回一个函数
+function f() {
+    var b = 'b';
+
+    return function() {
+        return b;
+    }
+}
+// 闭包实现方式2：函数体内创建一个新的全局函数
+var n;
+
+function f() {
+    var b = 'b';
+
+    n = function() {
+        return b;
+    }
+}
+// 函数所返回的是作用域本身，而不是该作用域中的变量或变量当前所返回的值
+function f(arg) {
+    var n = function() {
+        return arg;
+    }
+
+    arg++;
+    return n;
+}
+// 循环中的闭包：错误的方式
+function f() {
+    var a = [];
+    var i;
+
+    for (i = 0; i < 3; i++) {
+        a[i] = function() {
+            return i;
+        }
+    }
+
+    return a;
+}
+// 循环中的闭包的实现方式：正确方式1
+function f() {
+    var a = [];
+    var i;
+
+    for (i = 0; i < 3; i++) {
+        a[i] = (function(x) {
+            return function() {
+                return x;
+            }
+        })(i);
+    }
+}
+// 非闭包实现方式
+function f() {
+    function makeClosure(x) {
+        return function() {
+            return x;
+        }
+    }
+
+    var a = [];
+    var i;
+    for (i = 0; i < 3; i++) {
+        a[i] = makeClosure(i);
+    }
+
+    return a;
+}
+```
+    - 闭包实现方式1：返回一个函数
+    - 闭包实现方式2：函数体内创建一个新的全局函数
+    - 如果一个函数需要在其父级函数返回之后留住对父级作用域的链接的 话，就必须要为此建立一个闭包
+    - 函数所返回的是作用域本身，而不是该作用域中的变量或变量当前所返回的值
+    - 循环中的闭包:循环中的每个闭包都指向了一个共同的局部变量i的引用，因此只能返回i的当前值(循环结束时，当前值为3)。
+* Getter 与 Setter
+    - 保护变量，利用 getter 获取变量的值，利用 setter 设置变量的值，从而确保局部变量的不可直接访问性
+* 迭代器
+```
+function setup(x) {
+    var i = 0;
+
+    return function() {
+        return x[i++];
+    }
+}
+```
 
 ## 第4章：对象
+* 数组文本标识法(array literal notation)：用[]定义数组的方法
+* 对象文本标识法(object literal notation)：用{}定义对象的方法
+* P94
 ## 第5章：原型
 ## 第6章：继承
 ## 第7章：浏览器环境
