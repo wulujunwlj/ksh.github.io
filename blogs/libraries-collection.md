@@ -18,7 +18,7 @@
     - [angular-spinner](https://github.com/urish/angular-spinner)
     - [angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)
     - [ngProgress](https://github.com/VictorBjelkholm/ngProgress)
-* 
+* file-upload:[jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload)
 
 ## test
 * 多浏览器兼容性测试整体解决方案[f2etest](https://github.com/alibaba/f2etest)
