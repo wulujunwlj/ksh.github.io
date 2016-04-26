@@ -32,3 +32,6 @@
 │   ├── package.json
 │   ├── README.md
 
+## work todo
+* 实现一个 promise @20160417
+
