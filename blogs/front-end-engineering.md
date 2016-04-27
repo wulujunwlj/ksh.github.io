@@ -14,4 +14,6 @@
 
 * [目前有什么好的js和css版本控制程序？](https://www.zhihu.com/question/27548038)
 * 从头开始项目 Angular+Grunt[Beginner's Guide To Setting Up A Generic Angular Project Using Grunt](http://technology.finra.org/code/setting-up-angular-using-grunt.html)
+* [angular 压缩最佳实践](https://segmentfault.com/q/1010000004520699)
+* [angular 打包策略?](https://segmentfault.com/q/1010000004410982)
 * 

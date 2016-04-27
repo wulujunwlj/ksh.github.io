@@ -220,11 +220,102 @@ function setup(x) {
             * 函数对象中含有一个构造器属性，其引用就是 Function() 构造器函数
             * Function 对象中有一个 length 属性，用于记录该函数所拥有的参数数量
             * caller 属性(ECMA 标准之外)
-        + P114
-    - 
+        + Function 对象的方法
+            * toString() 返回函数的源代码
+            * call()/apply()
+        + arguments
+            * arguments 看起来像数组，但是它实际上是一个类似数组的对象。包含索引元素和 length 属性
+            * callee 属性：引用当前被调用的函数对象
+    - Boolean
+        + new Boolean() 将会创建一个新的对象，调用 valueOf() 方法获得其布尔值
+    - Number
+        + 被当做一般对象时，会试图将任何值转换为数字，与 parseInt() 或 parseFloat() 的作用基本相同
+        + 当做构造器函数时，会创建一个对象
+        + 属性：Number.MAX_VALUE/Number.MIN_VALUE/Number.POSITIVE_INFINITY/Number.NEGATIVE_INFINITY/Number.NaN
+        + 方法：toFixed(),toPrecision(),toExponential(),toString([radix])
+    - String
+        + String 对象实际上就像一个字符数组。也包含索引属性和length 属性
+        + 把基本类型的字符串当做对象使用时，后台会执行相应的 String 对象创建(与销毁)操作
+        + 如果不通过 new 操作符来调用 toString()，会试图将其参数转换为一个基本字符串，如果参数是一个对象的话，就等于调用该对象的 toString() 方法
+        + 方法：
+            * 返回新的字符串：toUpperCase(),toLowerCase(),charAt(),indexOf(),lastIndexOf(),slice(),substring(),split(),concat()
+            * 修改源字符串：
+        + slice(startIndex, endIndex) 与 substring(startIndex, endIndex)
+            * 第二个参数都是区间的末端位置，而不是区间长度
+            * 当参数是负值时，substring 会当做0，slice 会把它与字符串长度相加
+        + 
 * 工具类对象：Math、Date、RegExp 等用于提供遍历的对象
+    - Math
+        + Math 既不能当做一般函数调用，也不能用于 new 操作符来创建对象
+        + Math 只包含一系列方法和属性、用于数学计算的内建对象
+        + Math 的属性都是不可修改的
+        + 属性：Math.PI,Math.SQRT2,Math.E,Math.LN2,Math.LN10
+        + 方法：Math.random(),Math.round(),Math.floor(),Math.ceil(),Math.min(),Math.max(),Math.sqrt(),Math.power()
+        + 获取 (min, max) 之间的随机数：((max - min) * Math.random()) + min
+    - Date
+        + 构造方法的参数
+            * 无参数
+            * 一个用于表示日期的字符串
+            * 分别传递日、月、时间等值
+            * 一个 timestramp 值(从协调世界时 1970年1月1日0时0分0秒起至现在的总秒数，不包括闰秒)
+    - RegExp
+        + JS 采用的是 Perl5 的语法
+        + 定义方式
+            * RegExp() 构造器：new RegExp('j.*t')
+            * 文本定义方式：/j.*t/
+        + 属性
+            * global
+            * ignoreCase
+            * multiline
+            * lastIndex
+            * source
+        + 方法：
+            * test()：返回布尔值
+            * exec()：返回一个由匹配字符串组成的数组
+        + String 对象以正则表达式对象为参数的方法
+            * match()：返回包含匹配内容的数组
+            * search()：返回第一个匹配内容所在的位置
+            * replace()
+            * split()
 * 错误类对象：包括一般性错误对象以及其他各种特殊的错误类对象
+    - EvalError
+    - RangeError
+    - ReferenceError
+    - SyntaxError
+    - TypeError
+    - URIError
 ## 第5章：原型
+### 5.1 原型属性
+* 使用 for-in 循环遍历对象
+    - 不是所有属性都会在 for-in 循环中显示。已经被显示的属性被称为是可枚举的，可以通过对象的 propertyIsEnumerable() 判断可枚举的属性
+    - 原型链中的可枚举原型属性也会被显示，可以通过 hasOwnProperty() 方法判断属性是对象自身属性还是原型属性
+    - 对于所有的原型属性， propertyIsEnumerable() 都会返回 false，包括在 for-in 循环中可枚举的属性
+* isPrototypeOf()：判断当前对象是否是另一个对象的原型
+* __proto__(firefox 中)：指向相关原型的链接
+    - 修改对象的 constructor 以后，仍然能够访问对象原型链上的属性，说明对象中存在一个指向相关原型的链接，即 __proto__
+
+### 扩展内建对象
+* String reverse
+```
+String.prototype.reverse = function() {
+    return Array.prototype.reverse.apply(this.split('')).join('');
+}
+```
+* 如果想要通过原型为某个对象添加一个新属性，务必先检查一下该属性是否已经存在
+* 一些原型陷阱(P157)
+    - 当对原型对象执行完全替换时(obj.constructor={})，可能会触发原型链中某种异常(exception)
+    - prototype.constructor 属性是不可靠的
+* 重写某对象的 prototype 时，重置相应的 constructor 属性是一个好习惯
+
 ## 第6章：继承
+### 原型链
+* JS 中的函数都有一个名为 prototype 的对象属性，该函数被 new 操作符调用时会创建一个对象，并且该对象中会有一个指向其原型对象的秘密链接。通过该秘密链接，可以在新建的对象中调用相关原型对象的方法和属性。而原型对象本身也具有对象固有的普遍属性，因此本身也包含了指向其原型的链接。因此就形成了一条链，称之为原型链
+* obj.toString() 查找时原型链的处理过程
+    - 遍历对象的所有属性，查找 toString() 方法
+    - 查看 obj.__proto__ 所指向的对象(依次向上遍历查找)
+    - 找到 toString() 方法并返回，或者报错
+* 
+
 ## 第7章：浏览器环境
+
 ## 第8章：编程模式与设计模式

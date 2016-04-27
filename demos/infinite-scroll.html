@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Infinite Scroll</title>
+
+	<style>
+	.container {
+		margin: 0 auto;
+		width: 600px;
+	}
+	.holder {
+		background: #EEE;
+		height: 300px;
+	}
+	ul.wrapper {
+		list-style: none;
+		padding: 0;
+	}
+	ul.wrapper li {
+		height: 30px;
+		line-height: 30px;
+		padding: 5px;
+		border: 1px solid #000;
+	}
+	ul.wrapper li + li {
+		border-top: none;
+	}
+	ul.wrapper li:hover {
+		background: #ccc;
+	}
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+	#load-btn {
+		display: block;
+		height: 100%;
+		text-align: center;
+		background: #B7B7B7;
+		padding: 5px;
+	}
+	</style>
+</head>
+
+<body>
+	<h1>Infinite Scroll demo</h1>
+	<input type="text" autofocus>
+
+	<div class="container">
+		<div class="holder"></div>
+		<div class="wrapper">
+			<ul class="wrapper">
+				<li>111</li>
+				<li>222</li>
+				<li>333</li>
+				<li>444</li>
+				<li>555</li>
+			</ul>
+			<div class="loading-bar">
+				<a href="#" id="load-btn" status="loaded">加载更多</a>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var $loadBtn = document.querySelector('#load-btn');
+
+			$loadBtn.addEventListener('click', function() {
+				var self = this;
+				var status = self.attributes['status'];
+				if (!status || status.value  === 'loaded') {
+					status.value = 'loading';
+					self.innerText = '加载中...';
+				} else {
+					status.value = 'loaded';
+					self.innerText = '加载更多';
+				}
+			});
+		})
+	</script>
+</body>
+</html>
