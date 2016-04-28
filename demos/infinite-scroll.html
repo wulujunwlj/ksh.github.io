@@ -29,27 +29,27 @@
 	ul.wrapper li:hover {
 		background: #ccc;
 	}
-	a {
-		text-decoration: none;
-		color: #fff;
-	}
 	#load-btn {
 		display: block;
 		height: 100%;
 		text-align: center;
 		background: #B7B7B7;
 		padding: 5px;
+		text-decoration: none;
+		color: #fff;
+		border-radius: 4px;
 	}
 	</style>
 </head>
 
 <body>
 	<h1>Infinite Scroll demo</h1>
+	参考：<a href="https://segmentfault.com/a/1190000004974824">如何实现无限滚动</a>
 	<input type="text" autofocus>
 
 	<div class="container">
 		<div class="holder"></div>
-		<div class="wrapper">
+		<div class="wrapper-outer">
 			<ul class="wrapper">
 				<li>111</li>
 				<li>222</li>
@@ -58,27 +58,62 @@
 				<li>555</li>
 			</ul>
 			<div class="loading-bar">
-				<a href="#" id="load-btn" status="loaded">加载更多</a>
+				<a href="#" id="load-btn" status="loaded" class="loaded">加载更多</a>
 			</div>
 		</div>
 	</div>
 
+	<script src="./../node_modules/jquery/dist/jquery.js"></script>
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			var $loadBtn = document.querySelector('#load-btn');
+		// document.addEventListener('DOMContentLoaded', function() {
+		// 	var $loadBtn = document.querySelector('#load-btn');
 
-			$loadBtn.addEventListener('click', function() {
-				var self = this;
-				var status = self.attributes['status'];
-				if (!status || status.value  === 'loaded') {
-					status.value = 'loading';
-					self.innerText = '加载中...';
-				} else {
-					status.value = 'loaded';
-					self.innerText = '加载更多';
+		// 	$loadBtn.addEventListener('click', function() {
+		// 		var self = this;
+		// 		var status = self.attributes['status'];
+		// 		if (!status || status.value  === 'loaded') {
+		// 			status.value = 'loading';
+		// 			self.innerText = '加载中...';
+		// 		} else {
+		// 			status.value = 'loaded';
+		// 			self.innerText = '加载更多';
+		// 		}
+		// 	});
+		// })
+
+		$(document).ready(function() {
+			var $loadBtn = $("#load-btn");
+			var $wrapper = $('ul.wrapper');
+			var $items = $wrapper.find('li');
+
+			$loadBtn.on('click', function() {
+				var $this = $(this);
+
+				if ($this.hasClass('loaded')) {
+					$this
+						.removeClass('loaded')
+						.addClass('loading')
+						.text('加载中...');
+
+					setTimeout('loadingData($this)', 10000);
+				} else if ($this.hasClass('loading')) {
+					$this
+						.removeClass('loading')
+						.addClass('loaded')
+						.text('加载更多');
 				}
 			});
-		})
+
+			function loadingData($obj) {
+				$wrapper.append($items.clone());
+
+				$obj
+					.removeClass('loading')
+					.addClass('loaded')
+					.text('加载更多');
+			}
+
+		});
 	</script>
 </body>
 </html>

@@ -14,6 +14,10 @@
 * CSS - The Missing Manual
 * CSS Secrets
 
+### Tools
+* Less
+* SASS
+
 ## JavaScript
 
 ### Books
@@ -22,7 +26,10 @@
 * JavaScript DOM编程艺术（第2版）     - JS DOM 操作
 * JavaScript编程精解                - JS 基础
 * 数据结构与算法JavaScript描述      - DS && Algorithm
-* 锋利的 jQuery
+* 锋利的 jQuery                     - jQuery 基础
+* Test-driven JavaScript Development    - Test in JS
+* Testable JavaScript                   - Test in JS
+* You Don't Know JS
 
 ### Frameworks
 * Angularjs         - 原理
@@ -33,7 +40,7 @@
 * 
 
 ### Blogs
-* [破浪 Angular](http://www.cnblogs.com/whitewolf/category/404298.html)   - Angular
+* [破狼 Angular](http://www.cnblogs.com/whitewolf/category/404298.html)   - Angular
 
 ### Others
 * [ng-Q-A](./ng-Q-A.md)
