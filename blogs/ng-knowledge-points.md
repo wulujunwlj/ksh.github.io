@@ -31,7 +31,7 @@ ng 的知识点总结
 * Angular 的执行过程？
 * Angular 的启动方式？
 * $scope 是作为 controller 与 view 的链接，那么当一个最简单的 Angular app 不使用 ng-controller 时，对应的 view 的数据绑定在哪里？[参考](http://blog.jobbole.com/48593/)
-* 
+* [A Guide To Transclusion in AngularJS](http://teropa.info/blog/2015/06/09/transclusion.html)
 
 ### Dependency Injection
 * [Develop Guide - Dependency Injection](https://docs.angularjs.org/guide/di)

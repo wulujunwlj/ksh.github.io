@@ -15,3 +15,11 @@
 
 ## grunt 插件列表
 * [grunt-plugins](./grunt-plugins.md)
+
+## 201605
+* [angular-developer-guide](https://docs.angularjs.org/guide)(<span style="color:red;">20160520</span>)
+* page:**My Resume**(20160515)
+* book:**build your own angularjs**
+* book:**Node 与 Express Web 开发**
+* book: **锋利的 jQuery**
+* book: ** JavaScript 高级程序设计 **

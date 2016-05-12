@@ -3,6 +3,7 @@
 
 ## Styles
 * [css tooltip](https://github.com/chinchang/hint.css)
+* material-icons:[material-design-icons](https://github.com/google/material-design-icons)
 * 
 
 ## Scripts
@@ -29,13 +30,43 @@
 * A JavaScript visualization library for HTML and SVG：[d3](https://github.com/mbostock/d3)
 * log:[log4js-node](https://github.com/nomiddlename/log4js-node)
 * es6:[understandinges6](https://github.com/nzakas/understandinges6)
-* 浏览器探测：[device.js](https://github.com/matthewhudson/device.js)
 * jszip：[jszip](https://github.com/Stuk/jszip)
 * [js-the-right-way](https://github.com/braziljs/js-the-right-way)
 * A speech recognition library for the web[juliusjs](https://github.com/zzmp/juliusjs)
 * Google Voice library for node.js[voice.js](https://github.com/amper5and/voice.js)
+* 排序:[sortable](https://github.com/RubaXa/Sortable)
+* login:[node-login](https://github.com/braitsch/node-login)
+* 
+
+## util(工具类)
+* localStorage:[store.js](https://github.com/marcuswestin/store.js)
+* qrcode:
+    - [qrcodejs](https://github.com/davidshimjs/qrcodejs)
+    - [node-qrcode](https://github.com/soldair/node-qrcode)
+* HTML5 history/state:[history.js](https://github.com/browserstate/history.js)
+* 设备探测：[device.js](https://github.com/matthewhudson/device.js)
+* relational database in javascript:[lovefield](https://github.com/google/lovefield)
+* angular local storage:[angular-local-storage](https://github.com/grevory/angular-local-storage)
+* cookie:[js-cookie](https://github.com/js-cookie/js-cookie)
+* log:[log](https://github.com/adamschwartz/log)
+* debug:[debug](https://github.com/visionmedia/debug)
 * 
 
 ## test
 * 多浏览器兼容性测试整体解决方案[f2etest](https://github.com/alibaba/f2etest)
+* fake data:[faker.js](https://github.com/Marak/faker.js)
+* 读取文件数据：[json-server](https://github.com/typicode/json-server)
+* 
+
+## ARP
+* jQuery
+* Angularjs
+* ui-bootstrap
+* ui-router
+* ui-router-extras
+* pinyin-convert
+* sweetalert
+* ui-grid
+* qrcode
+* 
 
