@@ -23,3 +23,5 @@
 * book:**Node 与 Express Web 开发**
 * book: **锋利的 jQuery**
 * book: ** JavaScript 高级程序设计 **
+* [notes-python](https://github.com/lijin-THU/notes-python)
+* 

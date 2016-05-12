@@ -68,5 +68,6 @@
 * sweetalert
 * ui-grid
 * qrcode
+* [angular-ui-tree](https://github.com/angular-ui-tree/angular-ui-tree)
 * 
 
