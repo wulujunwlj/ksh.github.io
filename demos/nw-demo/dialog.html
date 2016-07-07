@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NW File Dialogs</title>
+</head>
+
+<body>
+
+  <input type="file" id="fileDialog" multiple accept=".html,.dll" nwdirectory>
+
+  <input type="file" nwsaveas>
+
+  <script>
+    var gui = require('nw.gui');
+    var win = gui.Window.get();
+
+    var chooser = document.querySelector('#fileDialog');
+
+    chooser.addEventListener('change', function(evt) {
+      appendText(this.value);
+    }, false);
+
+    function appendText(text) {
+      var elem = document.createElement('div');
+      elem.appendChild(document.createTextNode('content-->' + text));
+
+      document.body.appendChild(elem);
+    }
+  </script>
+</body>
+</html>

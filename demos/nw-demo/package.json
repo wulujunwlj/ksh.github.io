@@ -1,0 +1,19 @@
+{
+  "name": "helloworld",
+  "main": "fullscreen.html",
+  "window": {
+    "title": "nwjs hello world",
+    "toolbar": true,
+    "frame": true,
+    "show_in_taskbar": true,
+    "width": 800,
+    "height": 500,
+    "position": "center",
+    "min_width": 400,
+    "min_height": 200,
+    "max-width": 800,
+    "max_height": 600,
+    "kiosk": false,
+    "icon": "images/icon.png"
+  }
+}

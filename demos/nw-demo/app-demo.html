@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>APP API</title>
+</head>
+
+<body>
+  <script>
+    var gui = require('nw.gui');
+    var win = gui.Window.get();
+    var app = gui.App;
+
+    appendText(JSON.stringify(app.manifest));
+
+    function appendText(text) {
+      var elem = document.createElement('div');
+      elem.appendChild(document.createTextNode('111>>' + text));
+
+      document.body.appendChild(elem);
+    }
+
+    appendText(app.argv);
+    appendText(app.fullArgv);
+    appendText(app.filteredArgv);
+  </script>
+</body>
+</html>

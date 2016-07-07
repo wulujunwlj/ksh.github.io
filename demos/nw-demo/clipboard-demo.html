@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NW Clipboard</title>
+</head>
+
+<body>
+  <button onclick="getText()">获取内容</button>
+  <button onclick="setText()">写入内容</button>
+  <button onclick="clearText()">清除内容</button>
+
+  <script>
+    var gui = require('nw.gui');
+    var clipboard = gui.Clipboard.get();
+
+    function appendText(text) {
+      var elem = document.createElement('div');
+      elem.appendChild(document.createTextNode('content --> ' + text));
+
+      document.body.appendChild(elem);
+    }
+
+    function getText() {
+      var text = clipboard.get('text');
+      appendText(text);
+    }
+
+    function setText() {
+      clipboard.set('node-webkit 向剪贴板写入内容', 'text');
+    }
+
+    function clearText() {
+      clipboard.clear();
+      appendText('剪贴板已清除');
+      getText();
+    }
+  </script>
+</body>
+</html>

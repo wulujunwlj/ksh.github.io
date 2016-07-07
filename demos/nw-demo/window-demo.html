@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>aaa</title>
+</head>
+
+<body>
+  <h1>NW Window API Demo</h1> 
+
+  <div class="position"></div>
+
+  <button type="button" class="change-title" onclick="changeTitle();">修改标题</button>
+
+  <script>
+    var gui = require('nw.gui');
+    var win = gui.Window.get();
+
+    // win.x = 0;
+    // win.y = 0;
+
+    var position = document.querySelector('.position');
+    position.innerHTML = 'width: ' + win.width + '\n' + 'height: ' + win.height;
+
+    var button = document.querySelector('.change-title');
+    function changeTitle() {
+      win.title = '新标题';
+    };
+
+    // win.on('minimize', function() {
+    //   var elem = document.createElement('div');
+    //   elem.appendChild(document.createTextNode('窗口最小化'));
+
+    //   document.body.appendChild(elem);
+    // });
+    // win.minimize();
+
+    // // var new_win = gui.Window.get(window.open('http://www.baidu.com'));
+    // var new_win = gui.Window.open('http://www.baidu.com', {
+    //   width: 901,
+    //   height: 127,
+    //   focus: true
+    // });
+    // new_win.on('focus', function() {
+    //   var elem = document.createElement('div');
+    //   elem.appendChild(document.createTextNode('新窗口被激活'));
+    //   document.body.appendChild(elem);
+
+    //   // win.removeAllListeners('minimize');
+    // });
+  </script>
+</body>
+</html>

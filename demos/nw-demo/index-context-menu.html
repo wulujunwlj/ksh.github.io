@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Context Menu</title>
+</head>
+
+<body>
+  <h1>Context Menu</h1>
+  <script>
+    var nw = require('nw.gui');
+    var menu = new nw.Menu();
+
+    menu.append(new nw.MenuItem({
+      label: 'Item A',
+      click: function() {
+        alert('You have clicked Item A');
+      }
+    }));
+
+    menu.append(new nw.MenuItem({
+      label: 'Item B'
+    }));
+    menu.append(new nw.MenuItem({
+      type: 'separator'
+    }));
+    menu.append(new nw.MenuItem({
+      label: 'Item C'
+    }));
+
+    document.body.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+
+      menu.popup(event.x, event.y);
+
+      return false;
+    }, false);
+  </script>
+</body>
+</html>

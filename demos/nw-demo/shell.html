@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NW Shell API</title>
+</head>
+
+<body>
+
+  <button onclick="openIE()">IE打开网页</button>
+  <button onclick="openPDF()">打开PDF</button>
+  <button onclick="openFolder()">打开文件所在文件夹</button>
+  <script>
+    var gui = require('nw.gui');
+    var shell = gui.Shell;
+
+    function openIE() {
+      shell.openExternal('http://www.baidu.com');
+    }
+
+    function openPDF() {
+      shell.openExternal('D:\\MyFiles\\books\\ES6-in-depth.pdf');
+    }
+
+    function openFolder() {
+      shell.showItemInFolder('D:\\MyFiles\\books');
+    }
+  </script>
+</body>
+</html>

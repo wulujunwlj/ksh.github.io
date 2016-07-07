@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NW Fullscreen</title>
+</head>
+
+<body>
+  <button id="full">全屏</button>
+  <button id="exitFull">退出全屏</button>
+
+  <script>
+    var gui = require('nw.gui');
+    var win = gui.Window.get();
+
+    var $full = document.querySelector('#full');
+    var $exitFull = document.querySelector('#exitFull');
+
+    $full.addEventListener('click', function() {
+      win.enterFullscreen();
+    }, false);
+
+    $exitFull.addEventListener('click', function() {
+      win.leaveFullscreen();
+    }, false);
+  </script>
+</body>
+</html>

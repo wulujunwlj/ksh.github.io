@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NW Tray</title>
+</head>
+
+<body>
+  <h1>Tray 测试</h1>
+
+  <script>
+    var gui = require('nw.gui');
+    var win = gui.Window.get();
+    var isShowWindow = true;
+
+    var tray = new gui.Tray({
+      title: 'tray title',
+      icon: 'images/icon.png'
+    });
+    tray.tooltip = '点此打开';
+
+    var menu = new gui.Menu();
+    menu.append(new gui.MenuItem({
+      type: 'checkbox',
+      label: '打开面板'
+    }));
+    menu.append(new gui.MenuItem({
+      type: 'checkbox',
+      label: '关闭面板'
+    }));
+
+    tray.menu = menu;
+
+    tray.on('click', function() {
+      if (isShowWindow) {
+        win.hide();
+        isShowWindow = false;
+      } else {
+        win.show();
+        isShowWindow = true;
+      }
+    });
+  </script>
+</body>
+</html>

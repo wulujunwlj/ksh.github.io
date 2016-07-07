@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NW Capture Page</title>
+
+  <style>
+    .test {
+      background: #123;
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    var gui = require('nw.gui');
+    var win = gui.Window.get();
+    var fs = require('fs');
+
+    function takeSnapshot() {
+      win.capturePage(function (img) {
+
+        var base64data = img.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+
+        fs.writeFile("out.png", base64data, 'base64', function (err) {
+            console.log(err);
+        });
+
+      }, 'png');
+    }
+  </script>
+
+  <div class="test"></div>
+  <button type="button" onclick="takeSnapshot();">截图</button>
+</body>
+</html>
